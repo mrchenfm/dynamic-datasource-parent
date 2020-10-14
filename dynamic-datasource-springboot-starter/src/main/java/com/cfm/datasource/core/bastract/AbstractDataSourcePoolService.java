@@ -1,5 +1,6 @@
 package com.cfm.datasource.core.bastract;
 
+import com.cfm.datasource.core.DataSourceBasicProperties;
 import com.cfm.datasource.core.DataSourcePoolService;
 
 /**
@@ -11,4 +12,7 @@ import com.cfm.datasource.core.DataSourcePoolService;
  * @Date: 2020/10/13 21:52
  */
 public abstract class AbstractDataSourcePoolService implements DataSourcePoolService {
+    protected DataSourceBasicProperties getSecurityDbConfig(String dbKey){
+        return new DataSourceBasicProperties();
+    }
 }

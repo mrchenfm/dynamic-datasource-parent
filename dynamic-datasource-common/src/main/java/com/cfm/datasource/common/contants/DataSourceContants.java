@@ -4,7 +4,7 @@ package com.cfm.datasource.common.contants;
  * @version v1.0
  * @ProjectName: dynamic-datasource-parent
  * @ClassName: DataSourceContants
- * @Description: TODO(数据源启动器的公共常量)
+ * @Description: 数据源启动器的公共常量
  * @Author: fangming_chen
  * @Date: 2020/10/13 20:23
  */
