@@ -12,7 +12,7 @@ import java.util.Queue;
  * @version v1.0
  * @ProjectName: dynamic-datasource-parent
  * @ClassName: DynamicDataSourceContextHolder
- * @Description: TODO(一句话描述该类的功能)
+ * @Description: 动态数据源上下文
  * @Author: fangming_chen
  * @Date: 2020/10/14 21:22
  */
