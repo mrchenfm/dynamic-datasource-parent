@@ -45,6 +45,7 @@ public class C3p0DataSourcePoolServiceImpl extends AbstractDataSourcePoolService
     public DataSource buildSecurityDataSource(String dbKey) {
         DataSourceBasicProperties dbSecurityInfo = super.getSecurityDbConfig(dbKey);
         if(!ObjectUtils.isEmpty(dbSecurityInfo)) {
+            //设置三要素
             ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
             comboPooledDataSource.setUser(dbSecurityInfo.getUserName());
             comboPooledDataSource.setPassword(dbSecurityInfo.getPassword());

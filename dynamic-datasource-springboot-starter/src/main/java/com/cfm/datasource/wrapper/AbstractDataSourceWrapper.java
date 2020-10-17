@@ -42,6 +42,10 @@ public abstract class AbstractDataSourceWrapper {
 
     protected DataSource dataSource;
 
+    public DataSource getDataSource() {
+        return this.dataSource;
+    }
+
 
     public AbstractDataSourceWrapper(DataSourcePoolService dataSourcePoolService, String dbkey) {
         this.dataSourcePoolService = dataSourcePoolService;
