@@ -30,7 +30,7 @@ public class DynamicProperties implements InitializingBean {
     @Autowired
     private Environment environment;
 
-    private DataSource dataSource;
+    private DataSource dataSource = new DataSource();
     @Override
     public void afterPropertiesSet() throws Exception {
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cfm.datasource.mapper.SysUserMapper">
+
+    <select id="getAllUserInfo" resultType="com.cfm.datasource.entity.SysUser">
+        select * from t_sys_user
+    </select>
+    <select id="getAllUserInfo1" resultType="com.cfm.datasource.entity.SysUser">
+        select * from t_sys_user
+    </select></mapper>

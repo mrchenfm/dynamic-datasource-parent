@@ -1,0 +1,5 @@
+server:
+  #端口
+  port: 60082
+  servlet:
+    context-path: /helloWord
