@@ -30,10 +30,52 @@ public class DynamicProperties implements InitializingBean {
     @Autowired
     private Environment environment;
 
-    private DataSource dataSource = new DataSource();
+    private DataSource datasource = new DataSource();
     @Override
     public void afterPropertiesSet() throws Exception {
-
+        //datasource
+        if (this.datasource.username == null) {
+            this.datasource.username = environment.getProperty("dynamic.datasource.username");
+        }
+        if (this.datasource.password == null) {
+            this.datasource.password = environment.getProperty("dynamic.datasource.password");
+        }
+        if (this.datasource.url == null) {
+            this.datasource.url = environment.getProperty("dynamic.datasource.url");
+        }
+        if (this.datasource.driver == null) {
+            this.datasource.driver = environment.getProperty("dynamic.datasource.driver-class-name");
+            if (this.datasource.driver == null){
+                this.datasource.driver = DRIVER_CLASS;
+            }
+        }
+        if (this.datasource.initialSize == 0) {
+            if (environment.getProperty("dynamic.datasource.druid.initialSize") != null) {
+                this.datasource.initialSize = Integer.parseInt(environment.getProperty("dynamic.datasource.druid.initialSize"));
+            } else if (environment.getProperty("dynamic.datasource.initialSize") != null) {
+                this.datasource.initialSize = Integer.parseInt(environment.getProperty("dynamic.datasource.initialSize"));
+            } else {
+                this.datasource.initialSize = 1;
+            }
+        }
+        if (this.datasource.minIdle == 0) {
+            if (environment.getProperty("dynamic.datasource.druid.minIdle") != null) {
+                this.datasource.minIdle = Integer.parseInt(environment.getProperty("dynamic.datasource.druid.minIdle"));
+            } else if (environment.getProperty("dynamic.datasource.minIdle") != null) {
+                this.datasource.minIdle = Integer.parseInt(environment.getProperty("dynamic.datasource.minIdle"));
+            } else {
+                this.datasource.minIdle = 1;
+            }
+        }
+        if (this.datasource.maxActive == 0) {
+            if (environment.getProperty("dynamic.datasource.druid.maxActive") != null) {
+                this.datasource.maxActive = Integer.parseInt(environment.getProperty("spring.datasource.druid.maxActive"));
+            } else if (environment.getProperty("dynamic.datasource.maxActive") != null) {
+                this.datasource.maxActive = Integer.parseInt(environment.getProperty("dynamic.datasource.maxActive"));
+            } else {
+                this.datasource.maxActive = 20;
+            }
+        }
     }
 
     @Getter

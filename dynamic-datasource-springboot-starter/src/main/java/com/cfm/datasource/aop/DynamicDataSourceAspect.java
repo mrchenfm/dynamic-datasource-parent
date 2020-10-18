@@ -49,7 +49,7 @@ public class DynamicDataSourceAspect implements ApplicationContextAware {
      * 切换数据源
      * @param joinPoint
      */
-    @Before("execution(* *(..))")
+    @Before("execution(* com.cfm..mapper..*.*(..))")
     public void switchDataSource(JoinPoint joinPoint){
         if(BooleanUtils.isTrue(isDynamic.get())){
             isDynamic.set(false);
@@ -99,7 +99,7 @@ public class DynamicDataSourceAspect implements ApplicationContextAware {
     /**
      * 清空
      */
-    @After("execution(* *..dao..*.*(..))")
+    @After("execution(* com.cfm..mapper..*.*(..))")
     public void clean() {
         DynamicDataSourceContextHolder.clear();
     }
@@ -111,7 +111,7 @@ public class DynamicDataSourceAspect implements ApplicationContextAware {
      * @param call
      * @throws Exception
      */
-    @Before("execution(* *..service..*.*(..))")
+    @Before("execution(* com.cfm..service..*.*(..))")
     public void switchDataSourceOfTransaction(JoinPoint call) throws Exception {
         Class<?> targetClass = call.getTarget().getClass();
         Method definedMethod = getDefinedMethod(call, targetClass);

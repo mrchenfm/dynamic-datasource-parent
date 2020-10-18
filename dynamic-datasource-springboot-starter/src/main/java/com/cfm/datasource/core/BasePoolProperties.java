@@ -16,31 +16,31 @@ public class BasePoolProperties {
 
     public static String DEFAULT_DRIVER_CLASS = "com.mysql.jdbc.Driver";
 
-    @Value("${dynamic.datasource.username}")
+    @Value("${dynamic.datasource.username:}")
     public String username;
 
-    @Value("${dynamic.datasource.password}")
+    @Value("${dynamic.datasource.password:}")
     public String password;
 
-    @Value("${dynamic.datasource.url}")
+    @Value("${dynamic.datasource.url:}")
     public String url;
 
-    @Value("${dynamic.datasource.driver-class}")
+    @Value("${dynamic.datasource.driver-class:}")
     public String driverClass;
 
-    @Value("${dynamic.datasource.initialSize}")
+    @Value("${dynamic.datasource.initialSize:}")
     public Integer initialSize;
 
-    @Value("${dynamic.datasource.maxIdle}")
+    @Value("${dynamic.datasource.maxIdle:}")
     public Integer maxIdle;
 
-    @Value("${dynamic.datasource.minIdle}")
+    @Value("${dynamic.datasource.minIdle:}")
     public Integer minIdle;
 
-    @Value("${dynamic.datasource.maxActive}")
+    @Value("${dynamic.datasource.maxActive:}")
     public Integer maxActive;
 
-    @Value("${}")
+    @Value("${dynamic.datasource.maxWait:}")
     public Long maxWait;
 
     /**

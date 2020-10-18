@@ -33,6 +33,6 @@ public class DynamicDataSourceTest {
         List<SysUser> sysUsers = userMapper.getAllUserInfo1();
         System.out.println(JSONObject.toJSONString("cnr_core:"+userList));
 
-        System.out.println(JSONObject.toJSONString("test_db:"+userList));
+        System.out.println(JSONObject.toJSONString("test_db:"+sysUsers));
     }
 }

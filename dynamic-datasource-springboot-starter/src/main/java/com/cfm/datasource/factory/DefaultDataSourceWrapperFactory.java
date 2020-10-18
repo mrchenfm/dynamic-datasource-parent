@@ -5,6 +5,8 @@ import com.cfm.datasource.core.DataSourcePoolService;
 import com.cfm.datasource.core.c3p0.C3p0DataSourceWrapper;
 import com.cfm.datasource.wrapper.AbstractDataSourceWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
@@ -16,6 +18,8 @@ import javax.annotation.Resource;
  * @Author: fangming_chen
  * @Date: 2020/10/13 21:30
  */
+@Component
+@Lazy
 public class DefaultDataSourceWrapperFactory implements DataSourceWrapperFactory {
 
     @Resource

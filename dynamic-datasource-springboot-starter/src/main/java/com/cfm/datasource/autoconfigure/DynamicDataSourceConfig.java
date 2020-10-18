@@ -10,6 +10,7 @@ import com.cfm.datasource.core.bastract.AbstractDataSourcePoolService;
 import com.cfm.datasource.factory.DataSourceWrapperFactory;
 import com.cfm.datasource.wrapper.AbstractDataSourceWrapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -34,7 +35,7 @@ import static com.cfm.datasource.common.contants.DataSourceContants.SINGLE_DATAS
 @EnableConfigurationProperties(DynamicProperties.class)
 public class DynamicDataSourceConfig {
 
-    @Value("dynamic.datasource.username")
+    @Value("${dynamic.datasource.username:}")
     private String username;
 
     /**
@@ -85,6 +86,7 @@ public class DynamicDataSourceConfig {
     }
 
     @Bean
+    @ConditionalOnMissingBean
     @ConditionalOnProperty(prefix = DYNAMIC__DATASOURCE_PREFIX, value = "enabled", matchIfMissing = false)
     public DynamicDataSourceAspect dynamicDataSourceAspect(){
 

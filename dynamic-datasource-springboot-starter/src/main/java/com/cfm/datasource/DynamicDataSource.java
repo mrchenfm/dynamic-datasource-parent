@@ -75,7 +75,7 @@ public class DynamicDataSource extends AbstractRoutingDataSource implements Init
      */
     @Override
     protected DataSource determineTargetDataSource() {
-        Assert.isNull(targetDataSources,"目标数据源为空");
+        Assert.notNull(targetDataSources,"目标数据源为空");
         Object currentLookupKey = determineCurrentLookupKey();
 
         /**

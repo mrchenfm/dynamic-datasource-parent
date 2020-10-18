@@ -63,10 +63,10 @@ public class C3p0DataSourcePoolServiceImpl extends AbstractDataSourcePoolService
     private void setCommonProperties(ComboPooledDataSource dataSource) {
 
         try {
-            dataSource.setDriverClass(BasePoolProperties.getValue(c3p0Properties.driverClass, BasePoolProperties.DEFAULT_DRIVER_CLASS, null));
-            dataSource.setInitialPoolSize(BasePoolProperties.getValue(c3p0Properties.initialSize, 1, null));
-            dataSource.setMaxPoolSize(BasePoolProperties.getValue(c3p0Properties.maxActive, 20, null));
-            dataSource.setMinPoolSize(BasePoolProperties.getValue(c3p0Properties.minIdle, 3, null));
+            dataSource.setDriverClass(BasePoolProperties.getValue(c3p0Properties.driverClass, BasePoolProperties.DEFAULT_DRIVER_CLASS));
+            dataSource.setInitialPoolSize(BasePoolProperties.getValue(c3p0Properties.initialSize, 1));
+            dataSource.setMaxPoolSize(BasePoolProperties.getValue(c3p0Properties.maxActive, 20));
+            dataSource.setMinPoolSize(BasePoolProperties.getValue(c3p0Properties.minIdle, 3));
             dataSource.setMaxIdleTime(BasePoolProperties.getValue(c3p0Properties.maxIdleTime, 60));
             dataSource.setAcquireIncrement(BasePoolProperties.getValue(c3p0Properties.acquireIncrement, 3));
             dataSource.setAcquireRetryAttempts(BasePoolProperties.getValue(c3p0Properties.acquireRetryAttempts, 10));

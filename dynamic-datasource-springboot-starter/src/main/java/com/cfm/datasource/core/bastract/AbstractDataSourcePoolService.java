@@ -14,8 +14,8 @@ import com.cfm.datasource.core.DataSourcePoolService;
 public abstract class AbstractDataSourcePoolService implements DataSourcePoolService {
     protected DataSourceBasicProperties getSecurityDbConfig(String dbKey){
         if("cnr_core".equals(dbKey)){
-            return new DataSourceBasicProperties("root","mrchen124578","jdbc:mysql://127.0.0.1:3306/cnr_core?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false");
+            return new DataSourceBasicProperties("root","mrchen124578","jdbc:mysql://127.0.0.1:3306/cnr_core?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8");
         }
-        return new DataSourceBasicProperties("root","mrchen124578","jdbc:mysql://127.0.0.1:3306/test_db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false");
+        return new DataSourceBasicProperties("root","mrchen124578","jdbc:mysql://127.0.0.1:3306/test_db?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8");
     }
 }

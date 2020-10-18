@@ -3,6 +3,7 @@ spring:
     name: dynamic-datasource-starter-test
     profiles:
       active: dev
+dynamic:
   datasource:
     ####数据源默认数据库
     username: cnr_core
@@ -16,13 +17,13 @@ spring:
       ####当连接池中的连接耗尽的时候c3p0一次同时获取的连接数
       acquireIncrement: 3
 
-      datasource:
-        trends:
-          enable: true
-        single:
-          enable: false
-        type:
-          c3p0: true
+    trends:
+      enabled: true
+    single:
+      enabled: false
+    type:
+      c3p0: true
+
 
 mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml
